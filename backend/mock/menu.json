@@ -1,0 +1,120 @@
+{
+  "categories": [
+    { "id": "cat-burgers", "name": "Burgers", "parentId": null },
+    { "id": "cat-sides", "name": "Sides", "parentId": null },
+    { "id": "cat-drinks", "name": "Drinks", "parentId": null },
+    { "id": "cat-desserts", "name": "Desserts", "parentId": null }
+  ],
+  "items": [
+    {
+      "id": "mock-burger-1",
+      "name": "Classic Burger",
+      "description": "Beef patty, lettuce, tomato, pickles, mayo",
+      "price": 8.5,
+      "categoryId": "cat-burgers",
+      "imageUrl": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&q=80",
+      "cookingTime": 7,
+      "weight": 250,
+      "energyFullAmount": 560
+    },
+    {
+      "id": "mock-burger-2",
+      "name": "Double Burger",
+      "description": "Double beef patty, cheese, caramelized onion, BBQ sauce",
+      "price": 11.0,
+      "categoryId": "cat-burgers",
+      "imageUrl": "https://images.unsplash.com/photo-1553979459-d2229ba7433b?w=600&q=80",
+      "cookingTime": 9,
+      "weight": 380,
+      "energyFullAmount": 820
+    },
+    {
+      "id": "mock-spicy-burger-1",
+      "name": "Spicy Burger",
+      "description": "Crispy chicken, jalapeños, spicy mayo",
+      "price": 9.5,
+      "categoryId": "cat-burgers",
+      "imageUrl": "https://images.unsplash.com/photo-1561758033-d89a9ad46330?w=600&q=80",
+      "cookingTime": 8,
+      "weight": 270,
+      "energyFullAmount": 610
+    },
+    {
+      "id": "mock-wrap-1",
+      "name": "Chicken Wrap",
+      "description": "Grilled chicken, fresh veggies, tzatziki in flour tortilla",
+      "price": 7.5,
+      "categoryId": "cat-burgers",
+      "imageUrl": "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?w=600&q=80",
+      "cookingTime": 6,
+      "weight": 220,
+      "energyFullAmount": 490
+    },
+    {
+      "id": "mock-fries-1",
+      "name": "Regular Fries",
+      "description": "Crispy golden fries with sea salt",
+      "price": 3.0,
+      "categoryId": "cat-sides",
+      "imageUrl": "https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?w=600&q=80",
+      "cookingTime": 4,
+      "weight": 150,
+      "energyFullAmount": 380
+    },
+    {
+      "id": "mock-fries-2",
+      "name": "Large Fries",
+      "description": "Crispy golden fries, large portion",
+      "price": 4.5,
+      "categoryId": "cat-sides",
+      "imageUrl": "https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?w=600&q=80",
+      "cookingTime": 4,
+      "weight": 250,
+      "energyFullAmount": 630
+    },
+    {
+      "id": "mock-drink-1",
+      "name": "Cola (M)",
+      "description": "Coca-Cola, 0.4L",
+      "price": 2.5,
+      "categoryId": "cat-drinks",
+      "imageUrl": "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=600&q=80",
+      "cookingTime": 1,
+      "weight": 400,
+      "energyFullAmount": 170
+    },
+    {
+      "id": "mock-drink-2",
+      "name": "Orange Juice",
+      "description": "Freshly squeezed orange juice, 0.3L",
+      "price": 3.5,
+      "categoryId": "cat-drinks",
+      "imageUrl": "https://images.unsplash.com/photo-1621506289937-a8e4df240d0b?w=600&q=80",
+      "cookingTime": 2,
+      "weight": 300,
+      "energyFullAmount": 140
+    },
+    {
+      "id": "mock-drink-3",
+      "name": "Lemonade",
+      "description": "Homemade lemonade with mint, 0.4L",
+      "price": 3.0,
+      "categoryId": "cat-drinks",
+      "imageUrl": "https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=600&q=80",
+      "cookingTime": 3,
+      "weight": 400,
+      "energyFullAmount": 120
+    },
+    {
+      "id": "mock-dessert-1",
+      "name": "Ice Cream",
+      "description": "Vanilla soft serve in a waffle cone",
+      "price": 2.0,
+      "categoryId": "cat-desserts",
+      "imageUrl": "https://images.unsplash.com/photo-1551024506-0bccd828d307?w=600&q=80",
+      "cookingTime": 2,
+      "weight": 120,
+      "energyFullAmount": 240
+    }
+  ]
+}
