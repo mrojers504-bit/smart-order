@@ -27,7 +27,7 @@ async function getToken() {
 }
 
 function loadMock(name) {
-  const mockPath = path.join(__dirname, '..', '..', '..', 'mock', `${name}.json`);
+  const mockPath = path.join(__dirname, '..', '..', 'mock', `${name}.json`);
   return JSON.parse(fs.readFileSync(mockPath, 'utf8'));
 }
 

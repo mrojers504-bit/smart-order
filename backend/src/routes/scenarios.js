@@ -6,7 +6,7 @@ const { getMenu, getStopList } = require('../services/iikoClient');
 const router = express.Router();
 
 function loadScenarios() {
-  const p = path.join(__dirname, '..', '..', '..', 'config', 'scenarios.json');
+  const p = path.join(__dirname, '..', '..', 'config', 'scenarios.json');
   return JSON.parse(fs.readFileSync(p, 'utf8'));
 }
 
