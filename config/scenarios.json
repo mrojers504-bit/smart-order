@@ -1,0 +1,73 @@
+[
+  {
+    "type": "fast",
+    "label": { "az": "Tez", "ru": "Быстро", "en": "Fast" },
+    "icon": "⚡",
+    "maxCookingMinutes": 10,
+    "combos": [
+      {
+        "id": "combo-fast-1",
+        "name": { "az": "Burger Set", "ru": "Бургер Сет", "en": "Burger Set" },
+        "imageUrl": null,
+        "itemIds": ["mock-burger-1", "mock-fries-1", "mock-drink-1"]
+      },
+      {
+        "id": "combo-fast-2",
+        "name": { "az": "Wrap Set", "ru": "Врап Сет", "en": "Wrap Set" },
+        "imageUrl": null,
+        "itemIds": ["mock-wrap-1", "mock-drink-2"]
+      }
+    ]
+  },
+  {
+    "type": "profitable",
+    "label": { "az": "Sərfəli", "ru": "Выгодно", "en": "Best Value" },
+    "icon": "💰",
+    "combos": [
+      {
+        "id": "combo-profit-1",
+        "name": { "az": "Family Box", "ru": "Семейный Бокс", "en": "Family Box" },
+        "imageUrl": null,
+        "itemIds": ["mock-burger-1", "mock-burger-2", "mock-fries-1", "mock-fries-2", "mock-drink-1", "mock-drink-2"]
+      },
+      {
+        "id": "combo-profit-2",
+        "name": { "az": "Big Meal", "ru": "Большая Еда", "en": "Big Meal" },
+        "imageUrl": null,
+        "itemIds": ["mock-burger-2", "mock-fries-2", "mock-drink-1", "mock-dessert-1"]
+      }
+    ]
+  },
+  {
+    "type": "popular",
+    "label": { "az": "Populyar", "ru": "Популярное", "en": "Popular" },
+    "icon": "🔥",
+    "combos": [
+      {
+        "id": "combo-pop-1",
+        "name": { "az": "Classic Combo", "ru": "Классик Комбо", "en": "Classic Combo" },
+        "imageUrl": null,
+        "itemIds": ["mock-burger-1", "mock-fries-1", "mock-drink-1"]
+      },
+      {
+        "id": "combo-pop-2",
+        "name": { "az": "Spicy Combo", "ru": "Острый Комбо", "en": "Spicy Combo" },
+        "imageUrl": null,
+        "itemIds": ["mock-spicy-burger-1", "mock-fries-1", "mock-drink-3"]
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "label": { "az": "Şirkət üçün", "ru": "На компанию", "en": "For a Group" },
+    "icon": "👥",
+    "combos": [
+      {
+        "id": "combo-group-1",
+        "name": { "az": "Party Pack", "ru": "Пати Пак", "en": "Party Pack" },
+        "imageUrl": null,
+        "itemIds": ["mock-burger-1", "mock-burger-2", "mock-spicy-burger-1", "mock-fries-1", "mock-fries-2", "mock-drink-1", "mock-drink-2", "mock-drink-3"]
+      }
+    ]
+  }
+]

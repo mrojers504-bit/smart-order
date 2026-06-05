@@ -1,0 +1,24 @@
+# systemd unit for Chromium kiosk autostart (runs as kiosk user)
+# Place at: /etc/systemd/system/kiosk-browser.service
+#
+# Enable:
+#   sudo systemctl daemon-reload
+#   sudo systemctl enable kiosk-browser
+#   sudo systemctl start kiosk-browser
+
+[Unit]
+Description=Smart Order Kiosk Browser
+Requires=smart-order.service
+After=smart-order.service graphical.target
+
+[Service]
+User=kiosk
+Group=kiosk
+Environment=DISPLAY=:0
+Environment=XAUTHORITY=/home/kiosk/.Xauthority
+ExecStart=/usr/local/bin/start-kiosk.sh
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=graphical.target

@@ -1,0 +1,37 @@
+services:
+  - type: web
+    name: smart-order-backend
+    runtime: node
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: node src/index.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: MENU_CACHE_TTL
+        value: 300
+      # Заполнить реальными данными iiko если есть, иначе работает на mock
+      - key: IIKO_API_URL
+        value: https://api-ru.iiko.services/api/1
+      - key: IIKO_LOGIN
+        value: demo
+      - key: IIKO_PASSWORD
+        value: demo
+      - key: IIKO_ORGANIZATION_ID
+        value: 00000000-0000-0000-0000-000000000000
+
+  - type: web
+    name: smart-order-frontend
+    runtime: static
+    rootDir: frontend
+    buildCommand: npm install && npm run build
+    staticPublishPath: build
+    envVars:
+      - key: REACT_APP_API_URL
+        value: https://smart-order-backend.onrender.com
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html

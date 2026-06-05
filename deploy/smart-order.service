@@ -1,0 +1,23 @@
+# systemd unit for Smart Order Docker stack
+# Place at: /etc/systemd/system/smart-order.service
+#
+# Enable & start:
+#   sudo systemctl daemon-reload
+#   sudo systemctl enable smart-order
+#   sudo systemctl start smart-order
+
+[Unit]
+Description=Smart Order Kiosk App (Docker Compose)
+Requires=docker.service
+After=docker.service network-online.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+WorkingDirectory=/opt/smart-order
+ExecStart=/usr/bin/docker compose up -d --remove-orphans
+ExecStop=/usr/bin/docker compose down
+TimeoutStartSec=120
+
+[Install]
+WantedBy=multi-user.target
