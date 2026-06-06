@@ -19,6 +19,7 @@ const useStore = create((set, get) => ({
   combos: [],
   selectedCombo: null,
   cart: [],
+  lastOrderId: null,
   orderPending: false,
   loading: false,
   error: null,
@@ -42,11 +43,15 @@ const useStore = create((set, get) => ({
         productId: i.id,
         quantity: 1,
       }));
-      await fetch(`${API}/api/order`, {
+      const res = await fetch(`${API}/api/order`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ items }),
       });
+      if (res.ok) {
+        const data = await res.json();
+        if (data.orderId) set({ lastOrderId: data.orderId });
+      }
     } catch (e) {
       console.warn('Order POST failed:', e.message);
     } finally {
@@ -84,6 +89,7 @@ const useStore = create((set, get) => ({
       selectedScenario: null,
       selectedCombo: null,
       combos: [],
+      lastOrderId: null,
     }),
 
   SCREENS,

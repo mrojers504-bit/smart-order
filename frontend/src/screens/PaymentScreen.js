@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import { QRCodeSVG } from 'qrcode.react';
 import useStore from '../store/useStore';
 
 const STATUS = {
@@ -11,7 +12,7 @@ const STATUS = {
 
 export default function PaymentScreen() {
   const { t } = useTranslation();
-  const { cart, reset } = useStore();
+  const { cart, reset, lastOrderId } = useStore();
   const [status, setStatus] = useState(STATUS.IDLE);
   const [seconds, setSeconds] = useState(30);
 
@@ -44,16 +45,34 @@ export default function PaymentScreen() {
   };
 
   if (status === STATUS.DONE) {
+    const receiptBase = process.env.REACT_APP_RECEIPT_URL || window.location.origin;
+    const orderId = lastOrderId || `local-${Date.now()}`;
+    const receiptUrl = `${receiptBase}/receipt?order=${orderId}`;
+
     return (
       <div className="flex flex-col items-center justify-center w-full h-full bg-brand-dark animate-bounce-in px-8">
-        <div className="w-28 h-28 mb-6 rounded-full bg-green-500 flex items-center justify-center shadow-2xl">
-          <svg className="w-14 h-14 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+        <div className="w-24 h-24 mb-5 rounded-full bg-green-500 flex items-center justify-center shadow-2xl">
+          <svg className="w-12 h-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
           </svg>
         </div>
-        <h1 className="text-4xl font-black text-white mb-3">{t('payment_success')}</h1>
-        <p className="text-gray-400 text-lg mb-2 text-center">{t('payment_success_sub')}</p>
-        <p className="text-gray-600 text-sm mb-10">{t('payment_auto_return')}</p>
+        <h1 className="text-4xl font-black text-white mb-2">{t('payment_success')}</h1>
+        <p className="text-gray-400 text-lg mb-6 text-center">{t('payment_success_sub')}</p>
+
+        {/* QR-код */}
+        <div className="bg-white rounded-3xl p-5 mb-3 shadow-2xl flex flex-col items-center">
+          <QRCodeSVG
+            value={receiptUrl}
+            size={180}
+            bgColor="#ffffff"
+            fgColor="#1C1917"
+            level="M"
+            includeMargin={false}
+          />
+          <p className="text-xs text-gray-400 mt-3 font-medium">{t('qr_scan_receipt')}</p>
+        </div>
+        <p className="text-gray-600 text-xs mb-8 text-center">#{orderId}</p>
+
         <button
           onClick={reset}
           className="w-full py-5 bg-brand-red active:scale-95 transition-all rounded-2xl text-white text-xl font-black shadow-lg shadow-red-900/50"
