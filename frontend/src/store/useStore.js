@@ -89,6 +89,7 @@ const useStore = create((set, get) => ({
       selectedScenario: null,
       selectedCombo: null,
       combos: [],
+      cart: [],
       lastOrderId: null,
     }),
 
