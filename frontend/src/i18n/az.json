@@ -52,5 +52,5 @@
   "payment_timeout_sub": "Ödəniş keçmədi. Yenidən cəhd edin və ya kassirə müraciət edin.",
   "payment_retry": "Yenidən cəhd et",
   "back_to_home": "Əsas ekrana qayıt",
-  "qr_scan_receipt": "Elektron çek üçün skan edin"
+  "order_number": "Sifariş nömrəsi"
 }

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { QRCodeSVG } from 'qrcode.react';
 import useStore from '../store/useStore';
 
 const STATUS = {
@@ -45,9 +44,7 @@ export default function PaymentScreen() {
   };
 
   if (status === STATUS.DONE) {
-    const receiptBase = process.env.REACT_APP_RECEIPT_URL || window.location.origin;
-    const orderId = lastOrderId || `local-${Date.now()}`;
-    const receiptUrl = `${receiptBase}/receipt?order=${orderId}`;
+    const orderId = lastOrderId || `—`;
 
     return (
       <div className="flex flex-col items-center justify-center w-full h-full bg-brand-dark animate-bounce-in px-8">
@@ -59,19 +56,10 @@ export default function PaymentScreen() {
         <h1 className="text-4xl font-black text-white mb-2">{t('payment_success')}</h1>
         <p className="text-gray-400 text-lg mb-6 text-center">{t('payment_success_sub')}</p>
 
-        {/* QR-код */}
-        <div className="bg-white rounded-3xl p-5 mb-3 shadow-2xl flex flex-col items-center">
-          <QRCodeSVG
-            value={receiptUrl}
-            size={180}
-            bgColor="#ffffff"
-            fgColor="#1C1917"
-            level="M"
-            includeMargin={false}
-          />
-          <p className="text-xs text-gray-400 mt-3 font-medium">{t('qr_scan_receipt')}</p>
+        <div className="bg-white/10 rounded-3xl px-10 py-6 mb-8 flex flex-col items-center">
+          <p className="text-gray-400 text-sm font-medium mb-2">{t('order_number')}</p>
+          <p className="text-5xl font-black text-white tracking-widest">#{orderId}</p>
         </div>
-        <p className="text-gray-600 text-xs mb-8 text-center">#{orderId}</p>
 
         <button
           onClick={reset}

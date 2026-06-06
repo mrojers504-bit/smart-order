@@ -52,5 +52,5 @@
   "payment_timeout_sub": "Payment failed. Try again or see a cashier.",
   "payment_retry": "Try again",
   "back_to_home": "Return to home screen",
-  "qr_scan_receipt": "Scan for your digital receipt"
+  "order_number": "Order number"
 }
